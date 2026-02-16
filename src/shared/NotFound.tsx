@@ -1,7 +1,3 @@
 export default function NotFound() {
-  return (
-    <div>
-      <p>Page not found</p>
-    </div>
-  );
+  return <h1 style={{ color: "black" }}>Página no encontrada</h1>;
 }
