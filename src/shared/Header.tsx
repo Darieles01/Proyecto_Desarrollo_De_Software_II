@@ -31,7 +31,7 @@ export default function Header() {
           </Link>
 
           <Link
-            to="/notfound"
+            to="/profile"
             className="text-sm font-semibold text-white hover:text-indigo-400 transition"
           >
             Perfil del Cliente

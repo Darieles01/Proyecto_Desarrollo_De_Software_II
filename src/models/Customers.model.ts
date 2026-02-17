@@ -4,4 +4,7 @@ export interface Customer {
   email: string;
   phone: string;
   image: string;
+  address: string;
+  professionalCard: string;
+  signature: string;
 }
