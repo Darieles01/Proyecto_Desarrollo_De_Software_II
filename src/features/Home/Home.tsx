@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { pets, clients } from "../../data/mockdata";
 
-export function Home() {
+export default function Home() {
   const clientName = clients[0]?.name || "Cliente";
   return (
     <div className="bg-gray-800 py-24 sm:py-32 w-full">
