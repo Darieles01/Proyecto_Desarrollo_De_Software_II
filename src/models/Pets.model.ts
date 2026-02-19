@@ -17,6 +17,7 @@ export interface Pet {
   breed?: string;
   age?: number;
   weight?: number;
+  emoji: string;
   allergies?: string[];
   vaccines: Vaccine[];
   consultations: Consultation[];
