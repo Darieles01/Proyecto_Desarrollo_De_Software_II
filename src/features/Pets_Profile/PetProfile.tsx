@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Syringe, ClipboardList, ArrowLeft, AlertCircle } from "lucide-react";
-import type { Pet } from "../../../models/Pets.model";
-import { getPetById } from "../../../services/Pets.service";
+import type { Pet } from "../../models/Pets.model";
+import { getPetById } from "../../services/Pets.service";
 
 // ─── Species icon helper ────────────────────────────────────────────────────
 function speciesEmoji(species: string) {

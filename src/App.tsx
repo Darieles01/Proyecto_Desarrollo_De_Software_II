@@ -6,7 +6,7 @@ import NotFound from "./shared/NotFound";
 import Home from "./features/Home/Home";
 import { Profile } from "./features/Customers_Profile/Customer_Profile";
 import PetList from "./features/Pets_List/Pet_List";
-import { PetProfile } from "./features/Home/PetProfile/PetProfile";
+import { PetProfile } from "./features/Pets_Profile/PetProfile";
 
 export default function App() {
   return (
