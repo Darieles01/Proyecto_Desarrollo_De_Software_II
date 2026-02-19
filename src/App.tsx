@@ -5,6 +5,7 @@ import Footer from "./shared/Footer";
 import NotFound from "./shared/NotFound";
 import Home from "./features/Home/Home";
 import { Profile } from "./features/Customers_Profile/Customer_Profile";
+import PetList from "./features/Pets_List/Pet_List";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/pets" element={<PetList />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
