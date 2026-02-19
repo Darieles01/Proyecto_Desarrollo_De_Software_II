@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Camera, Pencil } from "lucide-react";
-import type { Customer } from "../../../models/Customers.model";
-import { getCustomer } from "../../../services/Customers.service";
+import type { Customer } from "../../models/Customers.model";
+import { getCustomer } from "../../services/Customers.service";
 
 export function Profile() {
   const [profile, setProfile] = useState<Customer | null>(null);

@@ -6,8 +6,6 @@ export default function Home() {
   return (
     <div className="bg-gray-800 py-24 sm:py-32 w-full">
       <div className="mx-auto max-w-3xl px-6">
-
-        
         <div className="text-center">
           <h2 className="text-base font-semibold text-indigo-400">
             Menú Principal
@@ -22,25 +20,20 @@ export default function Home() {
           </p>
         </div>
 
-        
         <div className="mt-16 relative">
           <div className="absolute inset-px rounded-2xl bg-gray-800"></div>
 
           <div className="relative flex flex-col items-center text-center rounded-2xl p-10">
-
             <h3 className="text-2xl font-semibold text-white">
               Resumen general
             </h3>
 
-            <p className="mt-4 text-gray-400">
-              Total de mascotas registradas
-            </p>
+            <p className="mt-4 text-gray-400">Total de mascotas registradas</p>
 
             <p className="mt-2 text-5xl font-bold text-indigo-400">
               {pets.length}
             </p>
 
-            
             <div className="mt-8 flex gap-4">
               <Link
                 to="/pets"
@@ -56,12 +49,10 @@ export default function Home() {
                 Client Profile
               </Link>
             </div>
-
           </div>
 
           <div className="pointer-events-none absolute inset-px rounded-2xl shadow-sm outline outline-white/10"></div>
         </div>
-
       </div>
     </div>
   );
