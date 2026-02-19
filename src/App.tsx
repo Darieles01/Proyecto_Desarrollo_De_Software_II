@@ -4,7 +4,7 @@ import Header from "./shared/Header";
 import Footer from "./shared/Footer";
 import NotFound from "./shared/NotFound";
 import Home from "./features/Home/Home";
-import { Profile } from "./features/Home/Profile/Profile";
+import { Profile } from "./features/Customers_Profile/Customer_Profile";
 
 export default function App() {
   return (
