@@ -24,7 +24,7 @@ export default function Header() {
               Mis Mascotas
             </Link>
             <Link to="/profile" className="text-sm font-semibold text-white hover:text-indigo-400 transition">
-              Perfil del Cliente
+              Tu cuenta
             </Link>
           </div>
 
@@ -52,7 +52,7 @@ export default function Header() {
               className="text-sm font-semibold text-white hover:text-indigo-400 transition"
               onClick={() => setIsOpen(false)}
             >
-              Perfil del Cliente
+              Mi cuenta
             </Link>
           </div>
         )}

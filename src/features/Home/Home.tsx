@@ -4,7 +4,7 @@ import { pets, clients } from "../../data/mockdata";
 export default function Home() {
   const clientName = clients[0]?.name || "Cliente";
   return (
-    <div className="bg-gray-800 py-24 sm:py-32 w-full">
+    <div className="py-24 sm:py-32 w-full">
       <div className="mx-auto max-w-3xl px-6">
         <div className="text-center">
           <h2 className="text-base font-semibold text-indigo-400">
@@ -39,14 +39,14 @@ export default function Home() {
                 to="/pets"
                 className="rounded-lg bg-indigo-600 px-6 py-3 text-white font-medium hover:bg-indigo-500 transition"
               >
-                My Pets
+                Mis mascotas
               </Link>
 
               <Link
                 to="/profile"
                 className="rounded-lg border border-gray-600 px-6 py-3 text-white font-medium hover:bg-gray-700 transition"
               >
-                Client Profile
+                Tu cuenta
               </Link>
             </div>
           </div>
