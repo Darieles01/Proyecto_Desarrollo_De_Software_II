@@ -7,6 +7,7 @@ import Home from "./features/Home/Home";
 import { Profile } from "./features/Customers_Profile/Customer_Profile";
 import PetList from "./features/Pets_List/Pet_List";
 import { PetProfile } from "./features/Pets_Profile/PetProfile";
+import { PetConsultations } from "./features/Pet_Consultations/Pet_Consultations";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/pets" element={<PetList />} />
+            <Route path="/pets_consultations/:id" element={<PetConsultations />} />
             <Route path="/pet/:id" element={<PetProfile />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

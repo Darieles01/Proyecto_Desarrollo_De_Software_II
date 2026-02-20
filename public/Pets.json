@@ -12,7 +12,13 @@
       { "id": 2, "name": "Parvovirus", "date": "2025-02-15" }
     ],
     "consultations": [
-      { "id": 1, "date": "2025-03-01", "description": "General checkup" }
+      { "id": 1, "date": "2025-03-01", "description": "General checkup" },
+      { "id": 2, "date": "2025-03-18", "description": "Skin irritation follow-up, prescribed antihistamines" },
+      { "id": 3, "date": "2025-04-05", "description": "Routine deworming and weight control" },
+      { "id": 4, "date": "2025-04-22", "description": "Ear infection treatment, cleaned and medicated" },
+      { "id": 5, "date": "2025-05-10", "description": "Annual vaccination booster and blood panel" },
+      { "id": 6, "date": "2025-06-03", "description": "Limping on front left leg, X-ray requested" },
+      { "id": 7, "date": "2025-06-20", "description": "X-ray results normal, anti-inflammatory prescribed" }
     ]
   },
   {
@@ -26,7 +32,14 @@
     "vaccines": [
       { "id": 1, "name": "Feline Leukemia", "date": "2025-01-20" }
     ],
-    "consultations": []
+    "consultations": [
+      { "id": 1, "date": "2025-02-05", "description": "Initial wellness exam and microchip implant" },
+      { "id": 2, "date": "2025-02-28", "description": "Vomiting episodes, dietary adjustment recommended" },
+      { "id": 3, "date": "2025-03-15", "description": "Sterilization procedure, post-op check scheduled" },
+      { "id": 4, "date": "2025-03-22", "description": "Post-op follow-up, healing correctly" },
+      { "id": 5, "date": "2025-04-18", "description": "Eye discharge observed, eye drops prescribed" },
+      { "id": 6, "date": "2025-05-30", "description": "Dental cleaning under anesthesia" }
+    ]
   },
   {
     "id": 3,
@@ -41,7 +54,13 @@
       { "id": 2, "name": "Influenza", "date": "2025-04-05" }
     ],
     "consultations": [
-      { "id": 1, "date": "2025-05-12", "description": "Hoof inspection and dental check" }
+      { "id": 1, "date": "2025-05-12", "description": "Hoof inspection and dental check" },
+      { "id": 2, "date": "2025-05-28", "description": "Mild colic episode, monitored and resolved" },
+      { "id": 3, "date": "2025-06-10", "description": "Farrier visit coordinated, shoes replaced" },
+      { "id": 4, "date": "2025-06-25", "description": "Skin lesion on neck, biopsy taken" },
+      { "id": 5, "date": "2025-07-08", "description": "Biopsy results benign, topical treatment applied" },
+      { "id": 6, "date": "2025-07-22", "description": "Annual influenza booster and full physical exam" },
+      { "id": 7, "date": "2025-08-05", "description": "Weight gain monitoring, nutrition plan adjusted" }
     ]
   }
 ]

@@ -237,37 +237,29 @@ export function PetProfile() {
             </div>
           )}
         </SectionCard>
-
         {/* ── Consultations ───────────────────────────────────────────────── */}
         <SectionCard
           title="Historial de Consultas"
           icon={<ClipboardList size={20} className="text-indigo-400" />}
         >
-          {pet.consultations.length === 0 ? (
-            <p className="text-gray-400 text-sm">Sin consultas registradas.</p>
-          ) : (
-            <ol className="relative border-l border-indigo-800/50 ml-3 flex flex-col gap-6">
-              {pet.consultations.map((c) => (
-                <li key={c.id} className="pl-6">
-                  {/* Timeline dot */}
-                  <span className="absolute -left-[9px] flex items-center justify-center w-4 h-4 rounded-full bg-indigo-600 outline outline-4 outline-gray-900" />
-                  <p className="text-xs font-semibold text-indigo-400 mb-1">
-                    {new Date(c.date + "T00:00:00").toLocaleDateString(
-                      "es-ES",
-                      {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      },
-                    )}
-                  </p>
-                  <p className="text-white text-sm font-medium">
-                    {c.description}
-                  </p>
-                </li>
-              ))}
-            </ol>
-          )}
+          <div className="flex flex-col gap-4">
+            <p className="text-gray-400 text-sm">
+              Revisa el registro completo de visitas médicas, diagnósticos y
+              observaciones anteriores.
+            </p>
+
+            <Link
+  to={`/pets_consultations/${pet.id}`}
+  className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-indigo-600/10 border border-indigo-500/50 text-indigo-300 font-semibold text-sm hover:bg-indigo-600 hover:text-white transition-all duration-200 group"
+>
+  <ClipboardList
+    size={18}
+    className="group-hover:scale-110 transition-transform"
+  />
+  Ver historial detallado
+</Link>
+
+          </div>
         </SectionCard>
       </div>
     </div>
