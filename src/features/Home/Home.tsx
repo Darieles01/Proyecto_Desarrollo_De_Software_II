@@ -1,8 +1,28 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { pets, clients } from "../../data/mockdata";
 
 export default function Home() {
-  const clientName = clients[0]?.name || "Cliente";
+  const [clientName, setClientName] = useState("Cliente");
+  const [petsCount, setPetsCount] = useState(0);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const customerResponse = await fetch('/Customers.json');
+        const customerData = await customerResponse.json();
+        setClientName(customerData.name);
+
+        const petsResponse = await fetch('/Pets.json');
+        const petsData = await petsResponse.json();
+        setPetsCount(petsData.length);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="py-24 sm:py-32 w-full">
       <div className="mx-auto max-w-3xl px-6">
@@ -31,7 +51,7 @@ export default function Home() {
             <p className="mt-4 text-gray-400">Total de mascotas registradas</p>
 
             <p className="mt-2 text-5xl font-bold text-indigo-400">
-              {pets.length}
+              {petsCount}
             </p>
 
             <div className="mt-8 flex gap-4">
