@@ -3,18 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { Syringe, ClipboardList, ArrowLeft, AlertCircle } from "lucide-react";
 import type { Pet } from "../../models/Pets.model";
 import { getPetById } from "../../services/Pets.service";
-
-// ─── Species icon helper ────────────────────────────────────────────────────
-function speciesEmoji(species: string) {
-  const map: Record<string, string> = {
-    Dog: "🐶",
-    Cat: "🐱",
-    Horse: "🐴",
-    Bird: "🐦",
-    Rabbit: "🐰",
-  };
-  return map[species] ?? "🐾";
-}
+import { speciesEmoji } from "../../utils/speciesEmoji";
 
 // ─── Sub-components ──────────────────────────────────────────────────────────
 

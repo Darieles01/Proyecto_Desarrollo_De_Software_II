@@ -1,16 +1,9 @@
 import { Link } from "react-router-dom";
 import type { Pet } from "../../models/Pets.model";
+import { speciesEmoji } from "../../utils/speciesEmoji";
 
 interface PetCardProps {
   pet: Pet;
-}
-
-function getSpeciesEmoji(species: string): string {
-  const speciesLower = species.toLowerCase();
-  if (speciesLower.includes("dog")) return "🐶";
-  if (speciesLower.includes("cat")) return "🐱";
-  if (speciesLower.includes("horse")) return "🐴";
-  return "🐾"; // Default
 }
 
 export default function PetCard({ pet }: PetCardProps) {
@@ -20,7 +13,7 @@ export default function PetCard({ pet }: PetCardProps) {
 
       <div className="p-6 flex flex-col items-center text-center gap-4">
         <div className="w-24 h-24 rounded-full bg-indigo-600/20 border-4 border-indigo-500 flex items-center justify-center text-5xl shadow-lg">
-          {getSpeciesEmoji(pet.species)}
+          {speciesEmoji(pet.species)}
         </div>
 
         {/* Nombre */}

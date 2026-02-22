@@ -5,6 +5,6 @@ export interface Customer {
   phone: string;
   image: string;
   address: string;
-  professionalCard: string;
+  customerCard: string;
   signature: string;
 }
