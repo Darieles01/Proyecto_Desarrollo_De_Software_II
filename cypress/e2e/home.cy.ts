@@ -33,18 +33,18 @@ describe("Home Page", () => {
   // ─────────────────────────────────────────────
   context("Resumen de estadísticas", () => {
     it("muestra el total de mascotas (3)", () => {
-      cy.contains("p", "Total de mascotas registradas")
-        .closest("div")
+      cy.contains("Total de mascotas registradas")
+        .parent() // sube al div contenedor
         .find("p")
-        .first()
+        .eq(1) // el segundo <p> es el número
         .should("have.text", "3");
     });
 
     it("muestra el total de consultas registradas (20)", () => {
-      cy.contains("p", "Total de consultas registradas")
-        .closest("div")
+      cy.contains("Total de consultas registradas")
+        .parent()
         .find("p")
-        .first()
+        .eq(1)
         .should("have.text", "20");
     });
   });
