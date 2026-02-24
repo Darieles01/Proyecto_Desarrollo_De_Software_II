@@ -4,17 +4,31 @@ import { Link } from "react-router-dom";
 export default function Home() {
   const [clientName, setClientName] = useState("Cliente");
   const [petsCount, setPetsCount] = useState(0);
+  const [consultationsCount, setConsultationsCount] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
+        
         const customerResponse = await fetch('/Customers.json');
         const customerData = await customerResponse.json();
         setClientName(customerData.name);
 
+        
         const petsResponse = await fetch('/Pets.json');
         const petsData = await petsResponse.json();
+
         setPetsCount(petsData.length);
+
+        
+        const totalConsultations = petsData.reduce(
+          (total: number, pet: any) =>
+            total + (pet.consultations ? pet.consultations.length : 0),
+          0
+        );
+
+        setConsultationsCount(totalConsultations);
+
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -48,11 +62,27 @@ export default function Home() {
               Resumen general
             </h3>
 
-            <p className="mt-4 text-gray-400">Total de mascotas registradas</p>
+            {/* Mascotas */}
+            <div className="mt-6">
+              <p className="text-gray-400">
+                Total de mascotas registradas
+              </p>
 
-            <p className="mt-2 text-5xl font-bold text-indigo-400">
-              {petsCount}
-            </p>
+              <p className="mt-2 text-5xl font-bold text-indigo-400">
+                {petsCount}
+              </p>
+            </div>
+
+            {/* Consultas */}
+            <div className="mt-8">
+              <p className="text-gray-400">
+                Total de consultas registradas
+              </p>
+
+              <p className="mt-2 text-5xl font-bold text-yellow-400">
+                {consultationsCount}
+              </p>
+            </div>
 
             <div className="mt-8 flex gap-4">
               <Link
