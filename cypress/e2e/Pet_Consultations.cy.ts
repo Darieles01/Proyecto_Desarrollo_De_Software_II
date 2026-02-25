@@ -10,7 +10,9 @@ describe("Prueba de Integración: Flujo Detallado de Consulta de Mascota", () =>
     cy.wait(["@getCustomer", "@getPets"]);
   });
 
-  // ------------------ 1. Navegación Inicial y Lista ------------------
+// ─────────────────────────────────────────────
+  // 1. Navegación Inicial y Lista
+  // ─────────────────────────────────────────────
   context("Paso 1: Del Home a la Lista de Mascotas", () => {
     it("navegar a la lista al hacer click en 'Mis mascotas'", () => {
       cy.contains("Mis mascotas").should("be.visible").click();
@@ -32,7 +34,9 @@ describe("Prueba de Integración: Flujo Detallado de Consulta de Mascota", () =>
     });
   });
 
-  // ------------------ 2. Perfil y Consultas ------------------
+  // ─────────────────────────────────────────────
+  //2. Perfil y Consultas
+  // ─────────────────────────────────────────────
   context("Paso 2: Del Perfil al Historial de Consultas", () => {
     beforeEach(() => {
       cy.visit("/pet/1");
@@ -52,7 +56,9 @@ describe("Prueba de Integración: Flujo Detallado de Consulta de Mascota", () =>
     });
   });
 
-  // ------------------ 3. Regreso y Cierre de Flujo ------------------
+  // ─────────────────────────────────────────────
+  //3. Regreso y Cierre de Flujo
+  // ─────────────────────────────────────────────
   context("Paso 3: Botones de Retorno", () => {
     it("regresar al perfil de la mascota desde el historial", () => {
       cy.visit("/pets_consultations/1");
@@ -71,7 +77,9 @@ describe("Prueba de Integración: Flujo Detallado de Consulta de Mascota", () =>
     });
   });
 
-  // ------------------ 4. Manejo de Errores ------------------
+  // ─────────────────────────────────────────────
+  // 4. Manejo de Errores
+  // ─────────────────────────────────────────────
   context("Paso 4: Manejo de Errores", () => {
     it("mostrar mensaje de error con ID inexistente y permitir volver", () => {
       cy.visit("/pets_consultations/999");

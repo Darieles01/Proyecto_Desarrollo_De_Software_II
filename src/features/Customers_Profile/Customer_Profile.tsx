@@ -86,7 +86,7 @@ export function Profile() {
 
       <div className="mx-auto max-w-5xl flex flex-col gap-6">
 
-        {/* ── Profile card ──────────────────────────────────────────────── */}
+        {/* Profile card */}
         <div className="relative rounded-2xl bg-gray-900 outline outline-white/10 shadow-xl overflow-hidden">
           <div className="h-2 w-full bg-indigo-600" />
 
@@ -189,7 +189,7 @@ export function Profile() {
                 </div>
               </div>
 
-              {/* Edit button mobile */}
+              {/* Edit button */}
               <div className="mt-10 sm:hidden">
                 <button
                   onClick={showToast}
@@ -203,7 +203,7 @@ export function Profile() {
           </div>
         </div>
 
-        {/* ── Stats — calculados desde Pets.json ────────────────────────── */}
+        {/*  Stats */}
         <div className="flex flex-col sm:flex-row gap-4">
           <StatCard
             icon={<PawPrint size={20} className="text-indigo-400" />}
@@ -222,7 +222,7 @@ export function Profile() {
           />
         </div>
 
-        {/* ── Pets — emoji, nombre, raza y pills desde Pets.json ────────── */}
+        {/*  Pets — emoji, nombre, raza y pills */}
         {pets.length > 0 && (
           <div className="rounded-2xl bg-gray-900 outline outline-white/10 shadow-xl overflow-hidden">
             <div className="h-1 w-full bg-indigo-600" />
@@ -249,12 +249,12 @@ export function Profile() {
                     to={`/pet/${pet.id}`}
                     className="group flex items-center gap-4 rounded-xl bg-gray-800 border border-white/5 hover:border-indigo-500/40 hover:bg-gray-800/80 transition-all duration-200 p-4"
                   >
-                    {/* Emoji viene de pet.species del JSON */}
+                    {/* Emoji viene de pet */}
                     <div className="w-12 h-12 rounded-full bg-indigo-600/20 border-2 border-indigo-500/50 flex items-center justify-center text-2xl shrink-0 group-hover:border-indigo-400 transition">
                       {speciesEmoji(pet.species)}
                     </div>
 
-                    {/* nombre y raza del JSON */}
+                    {/* nombre y raza  */}
                     <div className="flex-1 min-w-0">
                       <p className="text-white font-semibold text-sm truncate">
                         {pet.name}
@@ -264,7 +264,7 @@ export function Profile() {
                       </p>
                     </div>
 
-                    {/* vacunas y edad del JSON */}
+                    {/* vacunas y edad */}
                     <div className="flex flex-col items-end gap-1 shrink-0">
                       <span className="text-xs text-indigo-300 bg-indigo-900/40 border border-indigo-500/20 rounded-full px-2 py-0.5">
                         {pet.vaccines.length} vacunas

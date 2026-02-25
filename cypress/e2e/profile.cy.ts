@@ -1,18 +1,7 @@
 /// <reference types="cypress" />
 
-/**
- * E2E Tests – Customer Profile (/profile)
- *
- * Cubre:
- *  - Renderizado del perfil del cliente
- *  - Stats cards (mascotas, vacunas, consultas)
- *  - Sección "Mis Mascotas" y navegación a cada mascota
- *  - Toast "Por implementar" en botones de edición
- */
-
 describe("Customer Profile Page", () => {
   beforeEach(() => {
-    // Interceptamos los JSON para que los tests no dependan de un servidor externo
     cy.intercept("GET", "**/Customers.json", {
       fixture: "customers.json",
     }).as("getCustomer");
@@ -23,7 +12,6 @@ describe("Customer Profile Page", () => {
 
     cy.visit("/profile");
 
-    // Esperamos que carguen los datos
     cy.wait(["@getCustomer", "@getPets"]);
   });
 
@@ -72,8 +60,6 @@ describe("Customer Profile Page", () => {
   // ─────────────────────────────────────────────
   context("Stat Cards", () => {
     it("muestra el conteo correcto de mascotas (3)", () => {
-      // Estructura: <div><p>{value}</p><p>{label}</p></div>
-      // Encontramos el label, subimos al div padre y buscamos el primer <p> (el número)
       cy.contains("p", "Mascotas")
         .closest("div")
         .find("p")
@@ -82,7 +68,6 @@ describe("Customer Profile Page", () => {
     });
 
     it("muestra el total de vacunas aplicadas (5)", () => {
-      // Cerberus:2, Gatorade:1, Spirit:2 = 5
       cy.contains("p", "Vacunas aplicadas")
         .closest("div")
         .find("p")
@@ -91,7 +76,6 @@ describe("Customer Profile Page", () => {
     });
 
     it("muestra el total de consultas realizadas (20)", () => {
-      // Cerberus:7, Gatorade:6, Spirit:7 = 20
       cy.contains("p", "Consultas realizadas")
         .closest("div")
         .find("p")
@@ -109,7 +93,6 @@ describe("Customer Profile Page", () => {
     });
 
     it("renderiza las 3 mascotas", () => {
-      // Cada mascota es un <a> con el nombre
       cy.contains("Cerberus").should("be.visible");
       cy.contains("Gatorade").should("be.visible");
       cy.contains("Spirit").should("be.visible");
@@ -157,7 +140,6 @@ describe("Customer Profile Page", () => {
     it("el toast desaparece luego de ~2.5 segundos", () => {
       cy.contains("Editar Perfil").first().click();
       cy.contains("Por implementar").should("be.visible");
-      // El toast tiene timeout de 2500ms, esperamos un poco más
       cy.wait(3000);
       cy.contains("Por implementar").should("not.be.visible");
     });
@@ -173,7 +155,6 @@ describe("Customer Profile Page", () => {
   // ─────────────────────────────────────────────
   context("Estado de carga", () => {
     it("muestra 'Cargando perfil...' antes de recibir datos", () => {
-      // Interceptamos con delay para capturar el estado de loading
       cy.intercept("GET", "**/Customers.json", (req) => {
         req.reply({ delay: 1000, fixture: "customers.json" });
       }).as("slowCustomer");

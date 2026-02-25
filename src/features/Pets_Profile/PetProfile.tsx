@@ -5,7 +5,7 @@ import type { Pet } from "../../models/Pets.model";
 import { getPetById } from "../../services/Pets.service";
 import { speciesEmoji } from "../../utils/speciesEmoji";
 
-// ─── Sub-components ──────────────────────────────────────────────────────────
+// Sub-components 
 
 function InfoBadge({ label, value }: { label: string; value: string }) {
   return (
@@ -41,7 +41,7 @@ function SectionCard({
   );
 }
 
-// ─── Main component ──────────────────────────────────────────────────────────
+// Main component 
 
 export function PetProfile() {
   const { id } = useParams<{ id: string }>();
@@ -69,7 +69,7 @@ export function PetProfile() {
       .finally(() => setLoading(false));
   }, [id]);
 
-  // ── Loading ────────────────────────────────────────────────────────────────
+  //  Loading 
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-800">
@@ -78,7 +78,7 @@ export function PetProfile() {
     );
   }
 
-  // ── Not found / error ──────────────────────────────────────────────────────
+  //  Not found / error 
   if (error || !pet) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-6 bg-gray-800 px-6">
@@ -97,7 +97,7 @@ export function PetProfile() {
     );
   }
 
-  // ── Profile ────────────────────────────────────────────────────────────────
+  //  Profile 
   return (
     <div className="min-h-screen bg-gray-800 py-16 px-6">
       <div className="mx-auto max-w-4xl flex flex-col gap-8">
@@ -110,7 +110,7 @@ export function PetProfile() {
           Volver al inicio
         </Link>
 
-        {/* ── Header card ─────────────────────────────────────────────────── */}
+        {/* Header card */}
         <div className="rounded-2xl bg-gray-900 outline outline-white/10 shadow-xl overflow-hidden">
           <div className="h-2 w-full bg-indigo-600" />
           <div className="p-8 flex flex-col sm:flex-row gap-8 items-center sm:items-start">
@@ -178,7 +178,7 @@ export function PetProfile() {
           </div>
         </div>
 
-        {/* ── Vaccines ────────────────────────────────────────────────────── */}
+        {/* Vaccines */}
         <SectionCard
           title="Vacunas"
           icon={<Syringe size={20} className="text-indigo-400" />}
@@ -226,7 +226,7 @@ export function PetProfile() {
             </div>
           )}
         </SectionCard>
-        {/* ── Consultations ───────────────────────────────────────────────── */}
+        {/* Consultations */}
         <SectionCard
           title="Historial de Consultas"
           icon={<ClipboardList size={20} className="text-indigo-400" />}
