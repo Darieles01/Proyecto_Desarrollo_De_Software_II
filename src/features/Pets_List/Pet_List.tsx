@@ -56,6 +56,7 @@ export default function PetList() {
   return (
     <div className="min-h-screen bg-gray-800 py-16 px-6">
       <div className="mx-auto max-w-7xl">
+        
         {/* Título */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">

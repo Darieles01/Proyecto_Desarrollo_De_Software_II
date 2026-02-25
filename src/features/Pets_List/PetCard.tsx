@@ -44,8 +44,7 @@ export default function PetCard({ pet }: PetCardProps) {
         <Link
           to={`/pet/${pet.id}`}
           className="mt-2 w-full rounded-lg bg-indigo-600 hover:bg-indigo-500 transition px-6 py-3 text-white text-sm font-semibold"
-        >
-          VER MASCOTA
+        >VER MASCOTA
         </Link>
       </div>
     </div>
